@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "name": "小强Cloud",
+      "panel": "v2board",
+      "base_url": "https://xn--yetq7e.xyz",
+      "api_prefix": "/xq/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "飞鸟云",
+      "panel": "v2board",
+      "base_url": "https://feiniaoyun11.life",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    }
+  ],
+  "notify": {
+    "enabled": false,
+    "qywx_key": "YOUR_QYWX_ROBOT_KEY"
+  }
+}
