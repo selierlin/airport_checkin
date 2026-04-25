@@ -5,7 +5,9 @@
 ## 安装
 
 ```bash
-pip3 install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## 配置
@@ -57,7 +59,8 @@ cp config-template.json config.json
 ## 使用
 
 ```bash
-python3 main.py
+source venv/bin/activate
+python main.py
 ```
 
 输出示例：
@@ -82,7 +85,7 @@ crontab -e
 添加：
 
 ```
-0 8 * * * cd /path/to/airport_checkin && python3 main.py
+0 8 * * * cd /path/to/airport_checkin && venv/bin/python main.py
 ```
 
 ## 企业微信通知
