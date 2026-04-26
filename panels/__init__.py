@@ -1,7 +1,9 @@
 from .v2board import V2Board
+from .sspanel import SSPanel
 
 PANEL_MAP = {
     "v2board": V2Board,
+    "sspanel": SSPanel,
 }
 
 

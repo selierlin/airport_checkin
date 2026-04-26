@@ -19,6 +19,15 @@
       "password": "your_password",
       "auth_token": "",
       "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "极客云",
+      "panel": "sspanel",
+      "base_url": "https://jike0.net",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
     }
   ],
   "notify": {
