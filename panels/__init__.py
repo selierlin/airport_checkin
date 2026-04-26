@@ -1,9 +1,13 @@
 from .v2board import V2Board
 from .sspanel import SSPanel
+from .bygcloud import Bygcloud
+from .wmsxwd import Wmsxwd
 
 PANEL_MAP = {
     "v2board": V2Board,
     "sspanel": SSPanel,
+    "bygcloud": Bygcloud,
+    "wmsxwd": Wmsxwd,
 }
 
 

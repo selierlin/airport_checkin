@@ -28,6 +28,51 @@
       "password": "your_password",
       "auth_token": "",
       "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "速鹰666",
+      "panel": "sspanel",
+      "base_url": "https://suying567.com",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "优云666",
+      "panel": "sspanel",
+      "base_url": "https://youyun789.com",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "在人间",
+      "panel": "v2board",
+      "base_url": "https://hizrj.xyz",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890",
+      "cf_clearance": ""
+    },
+    {
+      "name": "我們所嚮往的",
+      "panel": "wmsxwd",
+      "base_url": "https://wmsxwd-g.men",
+      "email": "your@email.com",
+      "password": "your_password",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "白月光",
+      "panel": "bygcloud",
+      "base_url": "https://www.bygcloud.com",
+      "email": "your@email.com",
+      "password": "your_password",
+      "proxy": "http://127.0.0.1:7890"
     }
   ],
   "notify": {

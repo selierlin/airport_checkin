@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import urlparse
 from .base import BasePanel
 
 
@@ -7,16 +8,31 @@ class V2Board(BasePanel):
 
     def __init__(self, account: dict):
         super().__init__(account)
-        self.session = requests.Session()
+        self.cf_clearance = account.get("cf_clearance")
+
+        if self.cf_clearance:
+            from curl_cffi import requests as cf_requests
+            self.session = cf_requests.Session(impersonate="chrome")
+            domain = urlparse(self.base_url).hostname
+            self.session.cookies.set("cf_clearance", self.cf_clearance, domain=domain)
+        else:
+            self.session = requests.Session()
+
         if self._proxies():
-            self.session.proxies.update(self._proxies())
-        self.session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            if hasattr(self.session.proxies, "update"):
+                self.session.proxies.update(self._proxies())
+            else:
+                self.session.proxies = self._proxies()
+
+        headers = {
             "Accept": "application/json, text/plain, */*",
             "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
             "Referer": self.base_url + "/",
             "Origin": self.base_url,
-        })
+        }
+        if not self.cf_clearance:
+            headers["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        self.session.headers.update(headers)
 
     def login(self) -> bool:
         # 优先使用已有 auth_token（JWT）

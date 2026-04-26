@@ -102,6 +102,7 @@
 2. **然后用脚本批量探测接口** → 比浏览器一个个点快 10 倍
 3. **数据对不上就换接口** → 不要死磕一个 API，数据大概率在别的端点
 4. **参考已有面板实现** → 看 `panels/v2board.py` 的模式
+5. **探索结果必须完整转化到代码** → 探索完成后，逐条对照发现编写面板代码，不能遗漏任何有数据的页面或接口。特别是邀请/佣金页面，往往包含邀请人数、累计佣金、可提现佣金等仪表盘上没有的数据。
 
 ### 代理使用
 
@@ -109,10 +110,6 @@
 - 在 config.json 中配置 `proxy` 字段
 - requests Session 中通过 `proxies` 设置
 - 如果用户未明确允许，不要擅自使用代理（遵守 CLAUDE.md 规则）
-
-### 常见警告处理
-
-- Python 3.9 自带 LibreSSL 会触发 urllib3 v2 的 `NotOpenSSLWarning`，在 `main.py` 入口处加 `warnings.filterwarnings("ignore", category=NotOpenSSLWarning)` 消除，或模块顶部加 `import warnings; warnings.filterwarnings("ignore")`
 
 ## 输出要求
 
