@@ -27,6 +27,8 @@ def run():
 
     all_results = []
     for account in accounts:
+        name = account.get("name", "未命名")
+        print(f"正在请求: {name} ...")
         panel_cls = get_panel(account.get("panel", "v2board"))
         panel = panel_cls(account)
         result = panel.run()

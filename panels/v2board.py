@@ -72,9 +72,8 @@ class V2Board(BasePanel):
             if not data:
                 return result
 
-            # 余额（单位：分）
+            # 余额（单位：分）— 放最前
             result["余额"] = "¥{:.2f}".format(data.get("balance", 0) / 100)
-            result["佣金余额"] = "¥{:.2f}".format(data.get("commission_balance", 0) / 100)
 
             # 流量 — 从 /user/getSubscribe 获取（/user/info 里没有 u/d）
             self._fill_traffic_info(result, data.get("transfer_enable", 0))
@@ -94,6 +93,12 @@ class V2Board(BasePanel):
 
             # 邀请/注册数据 — 从 /user/invite/fetch 获取
             self._fill_invite_info(result)
+
+            # 佣金余额 — 放最后
+            result["佣金余额"] = "¥{:.2f}".format(data.get("commission_balance", 0) / 100)
+
+            # 总佣金 — 放最后
+            self._fill_commission_info(result)
 
         except Exception as e:
             print(f"[{self.name}] 获取用户信息失败: {e}")
@@ -129,6 +134,15 @@ class V2Board(BasePanel):
             # stat: [已注册人数, 总佣金(分), 待确认佣金, 可提现佣金?, 佣金余额(分)]
             if stat and len(stat) >= 1:
                 result["已注册人数"] = str(stat[0])
+        except Exception:
+            pass
+
+    def _fill_commission_info(self, result: dict):
+        """从 /user/invite/fetch 获取总佣金"""
+        try:
+            resp = self.session.get(self._api_url("/user/invite/fetch"))
+            data = resp.json().get("data", {})
+            stat = data.get("stat", [])
             if stat and len(stat) >= 2:
                 result["总佣金"] = "¥{:.2f}".format(stat[1] / 100)
         except Exception:
