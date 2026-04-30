@@ -1,4 +1,4 @@
 config.json
 .idea/
 __pycache__/
-venv
+.venv
