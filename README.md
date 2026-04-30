@@ -5,9 +5,7 @@
 ## 安装
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+uv sync
 ```
 
 ## 配置
@@ -59,8 +57,7 @@ cp config-template.json config.json
 ## 使用
 
 ```bash
-source venv/bin/activate
-python main.py
+uv run python main.py
 ```
 
 输出示例：
@@ -85,7 +82,7 @@ crontab -e
 添加：
 
 ```
-0 8 * * * cd /path/to/airport_checkin && venv/bin/python main.py
+0 8 * * * cd /path/to/airport_checkin && uv run python main.py
 ```
 
 ## 企业微信通知
@@ -103,4 +100,8 @@ crontab -e
 
 | 面板类型 | 说明 |
 |---------|------|
-| `v2board` | V2Board 及其兼容面板（SSPanel-Uim 皮肤等） |
+| `v2board` | V2Board 及其兼容面板 |
+| `sspanel` | SSPanel（极客云等） |
+| `bygcloud` | 白月光 |
+| `wmsxwd` | 我們所嚮往的（SSPanel Metron 主题） |
+| `fatcatcf` | 肥猫云（FatcatCF 面板） |
