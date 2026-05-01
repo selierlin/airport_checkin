@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import json
 import sys
 import os
@@ -17,6 +18,10 @@ def load_config() -> dict:
 
 
 def run():
+    parser = argparse.ArgumentParser(description="机场签到工具")
+    parser.add_argument("--name", help="只执行指定名称的机场（支持逗号分隔多个）")
+    args = parser.parse_args()
+
     cfg = load_config()
     accounts = cfg.get("accounts", [])
     notify_cfg = cfg.get("notify", {})
@@ -24,6 +29,13 @@ def run():
     if not accounts:
         print("没有配置任何账户")
         return
+
+    if args.name:
+        names = [n.strip() for n in args.name.split(",")]
+        accounts = [a for a in accounts if a.get("name") in names]
+        if not accounts:
+            print(f"未找到匹配的机场: {names}")
+            return
 
     all_results = []
     for account in accounts:

@@ -73,6 +73,8 @@ class V2Board(BasePanel):
     def checkin(self) -> str:
         try:
             resp = self.session.post(self._api_url("/user/checkin"))
+            if resp.status_code == 404:
+                return ""
             data = resp.json()
             if data.get("status") == "success" or data.get("data"):
                 return data.get("message", "签到成功")

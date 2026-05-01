@@ -73,6 +73,26 @@
       "email": "your@email.com",
       "password": "your_password",
       "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "Speedy",
+      "panel": "v2board",
+      "base_url": "https://cloud.speedypro.xyz",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "996Cloud",
+      "panel": "v2board",
+      "base_url": "https://dash.996cloud.top",
+      "api_prefix": "/hft/0qp",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
     }
   ],
   "notify": {
