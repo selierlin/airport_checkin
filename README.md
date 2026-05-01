@@ -4,6 +4,18 @@
 
 ## 安装
 
+先安装 [uv](https://docs.astral.sh/uv/)（Python 包管理工具）：
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+然后安装依赖：
+
 ```bash
 uv sync
 ```
