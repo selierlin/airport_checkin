@@ -7,7 +7,10 @@
 先安装 [uv](https://docs.astral.sh/uv/)（Python 包管理工具）：
 
 ```bash
-# macOS / Linux
+# macOS（推荐）
+brew install uv
+
+# Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Windows
@@ -85,7 +88,7 @@ uv run python main.py
 
 ## 定时运行
 
-用 crontab 设置每天自动执行：
+### macOS / Linux（crontab）
 
 ```bash
 crontab -e
@@ -95,6 +98,12 @@ crontab -e
 
 ```
 0 8 * * * cd /path/to/airport_checkin && uv run python main.py
+```
+
+### Windows（任务计划程序）
+
+```
+schtasks /create /tn "airport_checkin" /tr "cmd /c cd C:\path\to\airport_checkin && uv run python main.py" /sc daily /st 08:00
 ```
 
 ## 企业微信通知
