@@ -5,7 +5,7 @@ import sys
 import os
 
 from panels import get_panel
-from notify import send_qywx_batch
+from notify import send_qywx
 
 
 def load_config() -> dict:
@@ -37,20 +37,22 @@ def run():
             print(f"未找到匹配的机场: {names}")
             return
 
-    all_results = []
+    qywx_key = notify_cfg.get("qywx_key") if notify_cfg.get("enabled") else None
+
     for account in accounts:
         name = account.get("name", "未命名")
         print(f"正在请求: {name} ...")
-        panel_cls = get_panel(account.get("panel", "v2board"))
-        panel = panel_cls(account)
-        result = panel.run()
+        try:
+            panel_cls = get_panel(account.get("panel", "v2board"))
+            panel = panel_cls(account)
+            result = panel.run()
+        except Exception as e:
+            result = f"【{name}】\n  执行异常: {e}"
         print(result)
         print()
-        all_results.append(result)
 
-    # 发送通知
-    if notify_cfg.get("enabled"):
-        send_qywx_batch(notify_cfg.get("qywx_key"), all_results)
+        if qywx_key:
+            send_qywx(qywx_key, result)
 
 
 if __name__ == "__main__":
