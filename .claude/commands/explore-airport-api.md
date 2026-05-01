@@ -101,6 +101,7 @@
 3. 在 `panels/__init__.py` 中注册新面板
 4. 在 `config-template.json` 中添加账户配置模板
 5. 用真实账号测试验证
+6. **同时更新 `config.json`** — 将新机场账户配置追加到 `config.json` 的 `accounts` 数组中，使用用户提供的真实账号密码。`config-template.json` 用占位符，`config.json` 用真实数据，两个文件都要更新。
 
 ## 踩坑经验总结
 

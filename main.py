@@ -5,7 +5,7 @@ import sys
 import os
 
 from panels import get_panel
-from notify import send_qywx
+from notify import send_qywx_batch
 
 
 def load_config() -> dict:
@@ -50,7 +50,7 @@ def run():
 
     # 发送通知
     if notify_cfg.get("enabled"):
-        send_qywx(notify_cfg.get("qywx_key"), "\n".join(all_results))
+        send_qywx_batch(notify_cfg.get("qywx_key"), all_results)
 
 
 if __name__ == "__main__":

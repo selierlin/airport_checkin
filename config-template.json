@@ -36,7 +36,8 @@
       "email": "your@email.com",
       "password": "your_password",
       "auth_token": "",
-      "proxy": "http://127.0.0.1:7890"
+      "proxy": "http://127.0.0.1:7890",
+      "cf_clearance": ""
     },
     {
       "name": "优云666",
@@ -85,13 +86,62 @@
       "proxy": "http://127.0.0.1:7890"
     },
     {
-      "name": "996Cloud",
+      "name": "FSCloud",
       "panel": "v2board",
       "base_url": "https://dash.996cloud.top",
       "api_prefix": "/hft/0qp",
       "email": "your@email.com",
       "password": "your_password",
       "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "唯兔云",
+      "panel": "v2board",
+      "base_url": "https://diwafdk.flashline01.cyou",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "泡泡Dog",
+      "panel": "v2board",
+      "base_url": "https://iepl.io",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890",
+      "cf_clearance": "auto"
+    },
+    {
+      "name": "Teacat",
+      "panel": "v2board",
+      "base_url": "https://teacat2.com",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "魔界",
+      "panel": "v2board",
+      "base_url": "https://www.mojie.cyou",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": "",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "肥猫云",
+      "panel": "fatcatcf",
+      "base_url": "https://fccfweb20240306.fatcatcf.com",
+      "email": "your@email.com",
+      "password": "your_password",
       "proxy": "http://127.0.0.1:7890"
     }
   ],
