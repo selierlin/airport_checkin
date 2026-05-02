@@ -143,6 +143,23 @@
       "email": "your@email.com",
       "password": "your_password",
       "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "忍者云",
+      "panel": "renzhe",
+      "base_url": "https://renzhe.cloud",
+      "email": "your@email.com",
+      "password": "your_password",
+      "proxy": "http://127.0.0.1:7890"
+    },
+    {
+      "name": "澜云",
+      "panel": "v2board",
+      "base_url": "http://47.238.116.126:40004",
+      "api_prefix": "/api/v1",
+      "email": "your@email.com",
+      "password": "your_password",
+      "auth_token": ""
     }
   ],
   "notify": {

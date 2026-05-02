@@ -3,6 +3,7 @@ from .sspanel import SSPanel
 from .bygcloud import Bygcloud
 from .wmsxwd import Wmsxwd
 from .fatcatcf import Fatcatcf
+from .renzhe import Renzhe
 
 PANEL_MAP = {
     "v2board": V2Board,
@@ -10,6 +11,7 @@ PANEL_MAP = {
     "bygcloud": Bygcloud,
     "wmsxwd": Wmsxwd,
     "fatcatcf": Fatcatcf,
+    "renzhe": Renzhe,
 }
 
 
